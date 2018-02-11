@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="bootstrap/bootstrap-3.3.7-dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="bootstrap/bootstrap-3.3.7-dist/css/bootstrap-dropdownhover.css" />
+
+    <link rel="stylesheet" href="index.css" />
+</head>
+
+<body>
+    <nav class="navbar navbar-default  navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+                            style="margin-right:10px;">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <div class="navbar-brand">
+                            <img src="slicing/burger_btn.svg" alt="menu">
+                        </div>
+                        <div class="navbar-brand">
+                            <img id="logo-img" src="https://static.daraz.pk/cms/logo.png" alt="Daraz.pk" />
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm">
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <div class="col  col-lg-6 ">
+                            <form class="navbar-form" role="search">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" size="60" placeholder="Search" name="srch-term" id="srch-term">
+                                    <div class="input-group-btn">
+                                        <button id="searchBtn" class="btn" type="submit">
+                                            SEARCH
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+
+
+                        <ul class="nav navbar-nav navbar-right">
+                            <!--  <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                              <li><a href="#">Action</a></li>
+                              <li><a href="#">Another action</a></li>
+                              <li><a href="#">Something else here</a></li>
+                              <li role="separator" class="divider"></li>
+                              <li class="dropdown-header">Nav header</li>
+                              <li><a href="#">Separated link</a></li>
+                              <li><a href="#">One more separated link</a></li>
+                            </ul>
+                          </li> -->
+                            <li class="dropdown ">
+                                <a href="" class="dropdown-toggle" data-hover="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                    <b> Need</b>
+                                    <br />
+                                    <b class="nav_right_bold_btn">Help?</b>
+                                    <span class="caret"></span>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <a href="">Help</a>
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+                                    <li class="dropdown-header">Track Your Order</li>
+                                    <li> Your order number
+                                        <br />
+                                        <input id="track-order-num-input" type="text">
+                                    </li>
+                                    <li>Your email
+                                        <br />
+                                        <input id="track-order-email-input" type="email">
+                                    </li>
+                                    <li>
+                                        <a href="" id="track-btn">TRACK</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="" class="dropdown-toggle" data-hover="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                    <b>Your</b>
+                                    <br />
+                                    <b class="nav_right_bold_btn">Account</b>
+                                    <span class="caret"></span>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <button id="loginBtn" class="btn" data-target='#loginModal' data-toggle='modal'>LOGIN</button>
+                                    </li>
+                                    <li>
+                                        <a id="showInOneLine" href="#"> New Customer?
+                                            <span id="signUpLink"> SignUp</span>
+                                        </a>
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+                                    <li class="dropdown-header">Track Your Order</li>
+                                    <li> Your order number
+                                        <br />
+                                        <input id="track-order-num-input" type="text">
+                                    </li>
+                                    <li>Your email
+                                        <br />
+                                        <input id="track-order-email-input" type="email">
+                                    </li>
+                                    <li>
+                                        <a href="" id="track-btn">TRACK</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <span>
+                                        <img src="slicing/shopping-cart.svg" alt="" width="40px" />
+                                    </span>
+                                    <b class="nav_right_bold_btn">Cart</b>
+                                </a>
+                            </li>
+
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col col-md-3 col-lg-3">
+                <div class="menu_item">
+                    <ul class="menu_item_list">
+                        <li>
+                            <span>
+                                <img class="icon_img" src="slicing/smartphone-call.svg" alt="">
+                            </span>
+                            <a onMouseover='mouseOver(this)' onmouseout="mouseOut(this)" class="list_item" href="">PHONE'S & TABLETS &emsp; </a>
+                            <span class="glyphicon arrow_icon">&#xe258;</span>
+                        </li>
+                        <li>
+                            <span>
+                                <img class="icon_img" src="slicing/shirt.svg" alt="">
+                            </span>
+                            <a onMouseover='mouseOver(this)' onmouseout="mouseOut(this)" class="list_item" href="">MEN'S FASHION</a>
+                            <span class="glyphicon  arrow_icon">&#xe258;</span>
+                        </li>
+
+                        <li>
+                            <span>
+                                <img class="icon_img" src="slicing/high-heels.svg" alt="">
+                            </span>
+                            <a onMouseover='mouseOver(this)' onmouseout="mouseOut(this)" class="list_item" href="">WOMEN'S FASHION</a>
+                            <span class="glyphicon  arrow_icon">&#xe258;</span>
+                        </li>
+                        <li>
+                            <span>
+                                <img class="icon_img" src="slicing/cream.svg" alt="">
+                            </span>
+                            <a onMouseover='mouseOver(this)' onmouseout="mouseOut(this)" class="list_item" href="">BEAUTY & HEALTH</a>
+                            <span class="glyphicon  arrow_icon">&#xe258;</span>
+                        </li>
+                        <li>
+                            <span>
+                                <img class="icon_img" src="slicing/blender.svg" alt="">
+                            </span>
+                            <a onMouseover='mouseOver(this)' onmouseout="mouseOut(this)" class="list_item" href="">APPLIANCES</a>
+                            <span class="glyphicon  arrow_icon">&#xe258;</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col col-md-6 col-lg-6">
+                <div id="my-slider-1" class="carousel slide" data-ride='carousel'>
+                    <ol class="carousel-indicators">
+                        <li data-target="#my-slider-1" data-slide-to="0" class="active"></li>
+                        <li data-target="#my-slider-1" data-slide-to="1"></li>
+                        <li data-target="#my-slider-1" data-slide-to="2"></li>
+                        <li data-target="#my-slider-1" data-slide-to="3"></li>
+                    </ol>
+
+                    <div class="carousel-inner" role="listbox">
+                        <div class="item active">
+                            <img src="slider_images/Valentinday_Slider.jpg" alt="akloppenburg_hills" />
+                        </div>
+                        <div class="item">
+                            <img src="slider_images/Appliance_Slider.jpg" alt="akool_el_cap" />
+                        </div>
+                        <div class="item">
+                            <img src="slider_images/denizen_Slider.jpg" alt="dcoffman_lake" />
+                        </div>
+                        <div class="item">
+                            <img src="slider_images/Honor_Slider.jpg" alt="dcoffman_nature" />
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col col-md-3 col-lg-3">
+                <img src="slicing/unnamed-(2).png" alt="">
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm col-md ">
+
+                <div class="menu_item">
+                    <div>Recommended For You</div>
+                    <ul class="menu_item_list">
+                        <li>
+                            <a onmouseover='mouseOver(this)' onmouseout="mouseOut(this)" class="list_item_2" href="">BEST OF TVS</a>
+                            <span class="glyphicon arrow_icon">&#xe258;</span>
+                        </li>
+                        <li>
+                            <a onMouseover='mouseOver(this)' onmouseout="mouseOut(this)" class="list_item_2" href="">BEST SELLERS</a>
+                            <span class="glyphicon arrow_icon">&#xe258;</span>
+                        </li>
+                        <li>
+                            <a onMouseover='mouseOver(this)' onmouseout="mouseOut(this)" class="list_item_2" href="">BEST OF PHONES</a>
+                            <span class="glyphicon arrow_icon">&#xe258;</span>
+                        </li>
+                        <li>
+                            <a onMouseover='mouseOver(this)' onmouseout="mouseOut(this)" class="list_item_2" href="">TOP PICKS IN FASHION</a>
+                            <span class="glyphicon arrow_icon">&#xe258;</span>
+                        </li>
+                        <li>
+                            <a onMouseover='mouseOver(this)' onmouseout="mouseOut(this)" class="list_item_2" href="">TOP SELLERS IN APPLIANCES</a>
+                            <span class="glyphicon arrow_icon">&#xe258;</span>
+                        </li>
+                        <li>
+                            <a onMouseover='mouseOver(this)' onmouseout="mouseOut(this)" class="list_item_2" href="">GROCERY SHOP</a>
+                            <span class="glyphicon arrow_icon">&#xe258;</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div id="recommendItemDiv">
+                <div class="col-sm-2 col-md-2">
+                    <div class="card" style="width: 25rem;background-color:white">
+                        <img class="card-img-top img-rounded" src="tv_images/Ecostart.jpg" alt="Card image cap">
+
+                        <div class="card-block">
+                            <span>Ecostar</span>
+                            <h4 class="card-title">HD-Led-Tv 39" black</h4>
+                            <p class="card-text">Rs 29,900</p>
+                            <img src="tv_images/download.jpeg" alt="" width="100" height="50">
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-sm-2 col-md-2">
+                    <div class="card" style="width: 20rem;background-color:white">
+                        <img class="card-img-top img-rounded" src="tv_images/Orient.jpg" alt="Card image cap">
+
+                        <div class="card-block">
+                            <span>Orient</span>
+                            <h4 class="card-title">HD-Led-Tv 39" black</h4>
+                            <p class="card-text">Rs 25,900</p>
+                            <img src="tv_images/download.jpeg" alt="" width="100" height="50">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-2 col-md-2">
+                    <div class="card" style="width: 20rem;background-color:white">
+                        <img class="card-img-top img-rounded" src="tv_images/Panasonic.jpg" alt="Card image cap">
+
+                        <div class="card-block">
+                            <span>Panasonic</span>
+                            <h4 class="card-title">HD-Led-Tv 39" black</h4>
+                            <p class="card-text">Rs 26,500</p>
+                            <img src="tv_images/download.jpeg" alt="" width="100" height="50">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-2 col-md-2">
+                    <div class="card" style="width: 20rem;background-color:white; ">
+                        <img class="card-img-top img-rounded" src="tv_images/Samsung.jpg" alt="Card image cap">
+
+                        <div class="card-block">
+                            <span>Samsung</span>
+                            <h4 class="card-title">HD-Led-Tv 39" black</h4>
+                            <p class="card-text">Rs 46,700</p>
+                            <img src="tv_images/download.jpeg" alt="" width="100" height="50">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-2 col-md-2">
+                    <div class="card" style="width: 20rem;background-color:white">
+                        <img class="card-img-top img-rounded" src="tv_images/Tcl.jpg" alt="Card image cap" />
+
+                        <div class="card-block">
+                            <span>Tcl</span>
+                            <h4 class="card-title">HD-Led-Tv 39" black</h4>
+                            <p class="card-text">Rs 22,900</p>
+                            <img class="" src="tv_images/download.jpeg" alt="" width="100" height="50">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-2"></div>
+            <div class="col-sm-10">
+                <ul class="nav nav-tabs">
+                    <li class="active">
+                        <a href="#topBrands" data-toggle="tab">TOP BRANDS</a>
+                    </li>
+                    <li>
+                        <a href="#fashionBrands" data-toggle="tab">FASHION BRANDS</a>
+                    </li>
+                    <li>
+                        <a href="#electronicBrands" data-toggle="tab">ELECTRONICS BRANDS</a>
+                    </li>
+                </ul>
+                <div class="tab-content">
+                    <div id="topBrands" class="tab-pane active fade in">
+                        <div class="row">
+                            <div class="col-sm-2">
+                                <img src="top_brands_logos/anex.jpg" alt="" />
+                            </div>
+                            <div class="col-sm-2">
+                                <img src="top_brands_logos/dawlance.jpg" alt="" />
+                            </div>
+                            <div class="col-sm-2">
+                                <img src="top_brands_logos/denizen.jpg" alt="" />
+                            </div>
+                            <div class="col-sm-2">
+                                <img src="top_brands_logos/haier.jpg" alt="" />
+                            </div>
+                            <div class="col-sm-2">
+                                <img src="top_brands_logos/honor.jpg" alt="" />
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-2">
+                                <img src="top_brands_logos/hp.jpg" alt="" />
+                            </div>
+                            <div class="col-sm-2">
+                                <img src="top_brands_logos/huawei.jpg" alt="" />
+                            </div>
+                            <div class="col-sm-2">
+                                <img src="top_brands_logos/infinix.jpg" alt="" />
+                            </div>
+                            <div class="col-sm-2">
+                                <img src="top_brands_logos/kenwood.jpg" alt="" />
+                            </div>
+                            <div class="col-sm-2">
+                                <img src="top_brands_logos/l-oreal-paris.jpg" alt="" />
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-2">
+                                <img src="top_brands_logos/mi.jpg" alt="" />
+                            </div>
+                            <div class="col-sm-2">
+                                <img src="top_brands_logos/pel.jpg" alt="" />
+                            </div>
+                            <div class="col-sm-2">
+                                <img src="top_brands_logos/samsung.jpg" alt="" />
+                            </div>
+                            <div class="col-sm-2">
+                                <img src="top_brands_logos/sony.jpg" alt="" />
+                            </div>
+                            <div class="col-sm-2">
+                                <img src="top_brands_logos/tcl.jpg" alt="" />
+                            </div>
+                        </div>
+                    </div>
+                    <div id="fashionBrands" class="tab-pane fade">
+                        <div class="row">
+                            <div class="col-sm-2">
+                                <img src="fashion_brands_logos/al-karam.jpg" alt="" />
+                            </div>
+                            <div class="col-sm-2">
+                                <img src="fashion_brands_logos/bachaa-party.jpg" alt="" /> </div>
+                            <div class="col-sm-2">
+                                <img src="fashion_brands_logos/bonanza-l-satrangi.jpg" alt="" /> </div>
+                            <div class="col-sm-2">
+                                <img src="fashion_brands_logos/chase-value-centre.jpg" alt="" /> </div>
+                            <div class="col-sm-2">
+                                <img src="fashion_brands_logos/daraz-fashion.jpg" alt="" /> </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-2">
+                                <img src="fashion_brands_logos/denizen.jpg" alt="" />
+                            </div>
+                            <div class="col-sm-2">
+                                <img src="fashion_brands_logos/generation.jpg" alt="" /> </div>
+                            <div class="col-sm-2">
+                                <img src="fashion_brands_logos/gul-ahmed.jpg" alt="" /> </div>
+                            <div class="col-sm-2">
+                                <img src="fashion_brands_logos/junaid-jamshed.jpg" alt="" /> </div>
+                            <div class="col-sm-2">
+                                <img src="fashion_brands_logos/lala.jpg" alt="" /> </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-2">
+                                <img src="fashion_brands_logos/mac.jpg" alt="" />
+                            </div>
+                            <div class="col-sm-2">
+                                <img src="fashion_brands_logos/makeup-revolution-london.jpg" alt="" /> </div>
+                            <div class="col-sm-2">
+                                <img src="fashion_brands_logos/maybelline-new-york.jpg" alt="" /> </div>
+                            <div class="col-sm-2">
+                                <img src="fashion_brands_logos/orient-textile.jpg" alt="" /> </div>
+                            <div class="col-sm-2">
+                                <img src="fashion_brands_logos/tarzz.jpg" alt="" /> </div>
+                        </div>
+
+                    </div>
+                    <div id="electronicBrands" class="tab-pane fade">
+                        <div class="row">
+                            <div class="col-sm-2">
+                                <a href="">
+                                    <img src="electronic_brands_logos/eco-star.jpg" alt="" />
+                                </a>
+                            </div>
+                            <div class="col-sm-2">
+                                <a href="">
+                                    <img src="electronic_brands_logos/apple.jpg" alt="" />
+                                </a>
+                            </div>
+                            <div class="col-sm-2">
+                                <a href="">
+                                    <img src="electronic_brands_logos/canon.jpg" alt="" />
+                                </a>
+                            </div>
+                            <div class="col-sm-2">
+                                <a href="">
+                                    <img src="electronic_brands_logos/dany.jpg" alt="" />
+                                </a>
+                            </div>
+                            <div class="col-sm-2">
+                                <a href="">
+                                    <img src="electronic_brands_logos/dell.jpg" alt="" />
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-sm-2">
+                                <a href="">
+                                    <img src="electronic_brands_logos/hp.jpg" alt="" />
+                                </a>
+                            </div>
+                            <div class="col-sm-2">
+                                <a href="">
+                                    <img src="electronic_brands_logos/infinix.jpg" alt="" />
+                                </a>
+                            </div>
+                            <div class="col-sm-2">
+                                <a href="">
+                                    <img src="electronic_brands_logos/lenovo.jpg" alt="" />
+                                </a>
+                            </div>
+                            <div class="col-sm-2">
+                                <a href="">
+                                    <img src="electronic_brands_logos/nikon.jpg" alt="" />
+                                </a>
+                            </div>
+                            <div class="col-sm-2">
+                                <a href="">
+                                    <img src="electronic_brands_logos/orient.jpg" alt="" />
+                                </a>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-2">
+                                <a href="">
+                                    <img src="electronic_brands_logos/panasonic.jpg" alt="" />
+                                </a>
+                            </div>
+                            <div class="col-sm-2">
+                                <a href="">
+                                    <img src="electronic_brands_logos/pel.jpg" alt="" />
+                                </a>
+                            </div>
+                            <div class="col-sm-2">
+                                <a href="">
+                                    <img src="electronic_brands_logos/qmobile.jpg" alt="" />
+                                </a>
+                            </div>
+                            <div class="col-sm-2">
+                                <a href="">
+                                    <img src="electronic_brands_logos/sony.jpg" alt="" />
+                                </a>
+                            </div>
+                            <div class="col-sm-2">
+                                <a href="">
+                                    <img src="electronic_brands_logos/western-digital.jpg" alt="" />
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="modal fade" data-keyboard='false' data-backdrop="static" id="loginModal" tabindex="-1">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button class="close" data-dismiss="modal">&times;</button>
+                                    <h4 class="modal-title">Please Login</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="form-group">
+                                        <label for="">Email
+                                            <input type="text" id="inputEmail" class="form-control" placeholder="Enter Email" />
+                                        </label>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="">Password
+                                            <input type="password" class="form-control" id="inputPass" placeholder="Enter Password" />
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button class="btn" id="SignInBtn">Login</button>
+                                    <a href="" class="pull-left">Don't have an account? SignUp</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <script src="http://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+        <script src="bootstrap/bootstrap-3.3.7-dist/js/bootstrap.js"></script>
+        <script src="bootstrap/bootstrap-3.3.7-dist/js/bootstrap-dropdownhover.js"></script>
+        <script src="app.js"></script>
+</body>
+
+</html>

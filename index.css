@@ -1,0 +1,173 @@
+#logo-img{
+    width:70%;
+       
+}
+#searchBtn{
+    border-radius: 0px;
+    background-color:#F17E0A;
+    color:#FFFAF6;
+    font-weight: bold;
+}
+.navbar{
+    padding-left:20px;
+}
+.nav_right_bold_btn{
+    color:#111;
+}
+.dropdown-menu{
+    padding:25px;
+}
+
+#track-btn{
+    margin-top: 5px;
+    font-weight: bold;
+    color:#FFFFFF;
+    background-color: #C3C3C3;
+    width:100%;
+    text-align: center;
+
+}
+.caret {
+    position: relative;
+  }
+  
+  /* dropdown style */
+.dropdown.open .caret:before,
+.dropdown.open .caret:after {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 0;
+    height: 0;
+    border-width: 9px 8px;
+    border-style: solid;
+    border-color: transparent;
+    z-index: 1001;
+}
+  .dropdown.open .caret:before {
+    bottom: -17px;
+    right: -8px;
+    border-bottom-color: #ccc;
+}
+  .dropdown.open .caret:after {
+    bottom: -18px;
+    right: -8px;
+    border-bottom-color: #fff;
+}
+  /* navbar style */
+.navbar-nav > li > .dropdown-menu {
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+  }
+  .navbar-nav > .open > a .caret:before {
+    bottom: -23px;
+  }
+  .navbar-nav > .open > a .caret:after {
+    bottom: -24px;
+  }
+  #loginBtn{
+    border-radius: 0px;
+    background-color:#F17E0A;
+    color:#FFFAF6;
+    font-weight: bold;
+    width: 100%;
+  }
+  #signUpLink{
+    text-decoration: underline;
+    color:blue;
+    display: inline;
+    cursor: pointer;
+  
+  }
+  #showInOneLine:hover{
+    text-decoration: none;
+    cursor:default;
+    background-color: transparent;
+
+  
+  }
+  body{
+    background-color: #F5F5F5;
+    padding-left:28px;
+    padding-right: 28px;
+    padding-top: 87px;
+  }
+ 
+  .menu_item{
+    width: 240px;
+    border-color:rgb(222, 240, 217);
+    border-width: thin; 
+    border-style:solid;
+    float: left;
+    padding:0px;
+    background-color: #FFFFFF;
+
+
+   
+    
+
+  }
+  .menu_item_list{
+    list-style-type: none;
+  }
+.list_item{
+  color:#000000;
+  font-size: 12px;
+  
+}
+.list_item:hover{
+
+text-decoration: none;
+}
+.arrow_icon{
+  float: right;
+}
+.icon_img{
+ width: 7%;
+}
+#slider_conatainer{
+  display: inline;
+}
+.list_item_2{
+  color:#000000;
+  font-size: 10px;
+}
+.list_item_2:hover{
+  color:#F17E0A;
+  text-decoration: none;
+ 
+  }
+.menu_item_list > li{
+  padding:10px;
+}
+
+#recommendItemDiv{
+  margin-left: 50px;
+  padding-right: 0px;
+  padding-left: 0px;
+}
+#SignInBtn{
+  background-color:#F17E0A;
+  color: white;
+  font-weight: bold;
+  border-radius: 0px;
+}
+.modal {
+  text-align: center;
+  padding: 0!important;
+}
+
+.modal:before {
+  content: '';
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+  margin-right: -4px;
+}
+
+.modal-dialog {
+  display: inline-block;
+  text-align: left;
+  vertical-align: middle;
+}
+

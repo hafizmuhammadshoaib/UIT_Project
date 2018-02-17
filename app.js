@@ -1,3 +1,6 @@
+window.onload = function () {
+    initApp();
+}
 function CardDataObj(imgSrc, name, title, text) {
     this.imgSrc = imgSrc;
     this.name = name;
@@ -105,4 +108,137 @@ function setCardDiv(arrOfObj) {
 
     }
 
+}
+let signInBtn = document.getElementById("SignInBtn");
+let signUpBtn = document.getElementById("SignUpBtn");
+
+signInBtn.addEventListener('click', onSignIn);
+signUpBtn.addEventListener('click', onSignUp);
+function onSignIn() {
+    let email = document.getElementById("inputEmailSignIn").value;
+    let pass = document.getElementById("inputPassSignIn").value;
+    firebase.auth().signInWithEmailAndPassword(email, pass).catch(function (error) {
+        // Handle Errors here.
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        // ...
+    });
+
+
+}
+function onSignUp() {
+    let email = document.getElementById("inputEmailSignUp").value;
+    let pass = document.getElementById("inputPassSignUp").value;
+    firebase.auth().createUserWithEmailAndPassword(email, pass).catch(function (error) {
+        // Handle Errors here.
+        let errorCode = error.code;
+        let errorMessage = error.message;
+        alert(errorMessage);
+
+        // ...
+    });
+
+}
+function onSignOut() {
+    firebase.auth().signOut();
+
+}
+function initApp() {
+    firebase.auth().onAuthStateChanged(function (user) {
+        if (user) {
+            // User is signed in.
+            $("#loginModal").modal("hide");
+            clearInputFields();
+            accInfo(user.email);
+
+            // ...
+        } else {
+            setSignInAndSignUpButton();
+        }
+    });
+}
+
+function accInfo(email) {
+    let parentLi = document.getElementById("accInfo");
+    parentLi.innerHTML = "";
+    let anchorTag = document.createElement("a");
+    anchorTag.setAttribute("class", "dropdown-toggle");
+    anchorTag.setAttribute("data-hover", "dropdown");
+    anchorTag.setAttribute("role", "button");
+    anchorTag.setAttribute("aria-haspopup", "true");
+    anchorTag.setAttribute("aria-expanded", "false");
+
+
+
+    let boldTag = document.createElement("b");
+    boldTag.innerHTML = "Hello,";
+    let brTag = document.createElement("br");
+    let secBoldTag = document.createElement('b');
+    secBoldTag.innerHTML = email.substring(0, 6);
+    secBoldTag.setAttribute("class", "nav_right_bold_btn");
+    let spanTag = document.createElement("span");
+    spanTag.setAttribute("class", "caret");
+
+
+    let uListTag = document.createElement("ul");
+    uListTag.setAttribute("class", "dropdown-menu");
+    let liTag = document.createElement("li");
+    let btnTag = document.createElement("button");
+    btnTag.innerHTML = "Logout";
+    btnTag.setAttribute("class", "btn");
+    btnTag.setAttribute("id", "signOutBtn");
+    btnTag.setAttribute("onclick", "onSignOut()");
+    liTag.appendChild(btnTag)
+    uListTag.appendChild(liTag);
+
+
+    anchorTag.appendChild(boldTag);
+    anchorTag.appendChild(brTag);
+    anchorTag.appendChild(secBoldTag);
+    anchorTag.appendChild(spanTag);
+
+
+    parentLi.appendChild(anchorTag);
+    parentLi.appendChild(uListTag);
+
+
+}
+function setSignInAndSignUpButton() {
+    document.getElementById("accInfo").innerHTML = `<a href="" class="dropdown-toggle" data-hover="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+    <b>Your</b>
+    <br />
+    <b class="nav_right_bold_btn">Account</b>
+    <span class="caret"></span>
+</a>
+<ul class="dropdown-menu">
+    <li>
+        <button id="loginBtn" class="btn" data-target='#loginModal' data-toggle='modal'>LOGIN</button>
+    </li>
+    <li>
+        <a id="showInOneLine" href="Javascript:void(0)" data-target='#SignUpModal' data-toggle='modal'> New Customer?
+            <span id="signUpLink"> SignUp</span>
+        </a>
+    </li>
+    <li role="separator" class="divider"></li>
+    <li class="dropdown-header">Track Your Order</li>
+    <li> Your order number
+        <br />
+        <input id="track-order-num-input" type="text">
+    </li>
+    <li>Your email
+        <br />
+        <input id="track-order-email-input" type="email">
+    </li>
+    <li>
+        <a href="" id="track-btn">TRACK</a>
+    </li>
+</ul>
+`;
+
+}
+function clearInputFields() {
+    document.getElementById("inputEmailSignIn").value = "";
+    document.getElementById("inputPassSignIn").value = "";
+    document.getElementById("inputEmailSignUp").value = "";
+    document.getElementById("inputPassSignUp").value = "";
 }

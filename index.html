@@ -89,7 +89,7 @@
                                     </li>
                                 </ul>
                             </li>
-                            <li class="dropdown">
+                            <li class="dropdown" id="accInfo">
                                 <a href="" class="dropdown-toggle" data-hover="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                                     <b>Your</b>
                                     <br />
@@ -101,7 +101,7 @@
                                         <button id="loginBtn" class="btn" data-target='#loginModal' data-toggle='modal'>LOGIN</button>
                                     </li>
                                     <li>
-                                        <a id="showInOneLine" href="#"> New Customer?
+                                        <a id="showInOneLine" href="Javascript:void(0)" data-target='#SignUpModal' data-toggle='modal'> New Customer?
                                             <span id="signUpLink"> SignUp</span>
                                         </a>
                                     </li>
@@ -522,18 +522,18 @@
                                 <div class="modal-body">
                                     <div class="form-group">
                                         <label for="">Email
-                                            <input type="text" id="inputEmail" class="form-control" placeholder="Enter Email" />
+                                            <input type="text" id="inputEmailSignIn" class="form-control" placeholder="Enter Email" />
                                         </label>
                                     </div>
                                     <div class="form-group">
                                         <label for="">Password
-                                            <input type="password" class="form-control" id="inputPass" placeholder="Enter Password" />
+                                            <input type="password" class="form-control" id="inputPassSignIn" placeholder="Enter Password" />
                                         </label>
                                     </div>
                                 </div>
                                 <div class="modal-footer">
-                                    <button class="btn" id="SignInBtn">Login</button>
-                                    <a href="" class="pull-left">Don't have an account? SignUp</a>
+                                    <button class="btn" id="SignInBtn" >Login</button>
+                                    <a class=" pull-left" href="Javascript:void(0)" data-target='#SignUpModal' data-toggle='modal' data-dismiss="modal">Don't have an account? SignUp</a>
                                 </div>
                             </div>
                         </div>
@@ -541,6 +541,57 @@
                 </div>
             </div>
         </div>
+
+
+
+
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="modal fade" data-keyboard='false' data-backdrop="static" id="SignUpModal" tabindex="-1">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button class="close" data-dismiss="modal">&times;</button>
+                                    <h4 class="modal-title">MAKE AN ACCOUNT AND ENJOY THE SHOPPING</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="form-group">
+                                        <label for="">Email
+                                            <input type="text" id="inputEmailSignUp" class="form-control" placeholder="Enter Email" />
+                                        </label>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="">Password
+                                            <input type="password" class="form-control" id="inputPassSignUp" placeholder="Enter Password" />
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button class="btn" id="SignUpBtn">SignUp</button>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <script src="https://www.gstatic.com/firebasejs/4.10.0/firebase.js"></script>
+        <script>
+            // Initialize Firebase
+            var config = {
+                apiKey: "AIzaSyCpcdjvalPu_rwK11LMz5SqP9tImslapJc",
+                authDomain: "silat-aab4e.firebaseapp.com",
+                databaseURL: "https://silat-aab4e.firebaseio.com",
+                projectId: "silat-aab4e",
+                storageBucket: "silat-aab4e.appspot.com",
+                messagingSenderId: "684765542922"
+            };
+            firebase.initializeApp(config);
+        </script>
 
 
         <script src="http://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>

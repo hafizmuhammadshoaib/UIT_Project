@@ -146,7 +146,7 @@ text-decoration: none;
   padding-right: 0px;
   padding-left: 0px;
 }
-#SignInBtn{
+#SignInBtn,#SignUpBtn,#signOutBtn{
   background-color:#F17E0A;
   color: white;
   font-weight: bold;
